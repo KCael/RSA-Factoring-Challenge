@@ -20,15 +20,3 @@ def factorize(num):
 
 if len(argv) != 2:
     exit()
-
-def factors(filename):
-    """read file and prints them out"""
-
-    with open(filename, encoding="utf-8") as file:
-        for i in file.readlines():
-            num = int(i)
-            result = factor(n)
-
-
-if __name__ == "__main__":
-    factors(argv[1])
