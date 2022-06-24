@@ -5,7 +5,7 @@ import math
 from sys import argv
 
 def factorize(num):
-   """"gets the factors of an integer > 1"""
+    """"gets the factors of an integer > 1"""
     i = 2
 
     if num < 2:
@@ -14,9 +14,9 @@ def factorize(num):
     print(num, "<- num-before")
     while num % i:
         i += 1
-    print("{:.0f}={:.0f}*{:.0f}".format(num, num / i, i))
-    print(num, "<- num-after")
-    print()
+        print("{:.0f}={:.0f}*{:.0f}".format(num, num / i, i))
+        print(num, "<- num-after")
+        print()
 
 if len(argv) != 2:
     exit()
