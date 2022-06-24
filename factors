@@ -31,3 +31,16 @@ try:
             line = file.readline()
 except:
     pass
+
+
+def factors(filename):
+    """read_file and prints them out"""
+
+    with open(filename, encoding="utf-8") as file:
+        for i in file.readlines():
+            n = int(i)
+            result = factory(n)
+
+
+if __name__ == "__main__":
+    factors(argv[1])
