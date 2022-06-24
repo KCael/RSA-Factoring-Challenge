@@ -22,12 +22,12 @@ if len(argv) != 2:
     exit()
 
 def factors(filename):
-    """read_file and prints them out"""
+    """read file and prints them out"""
 
     with open(filename, encoding="utf-8") as file:
         for i in file.readlines():
-            n = int(i)
-            result = factory(n)
+            num = int(i)
+            result = factor(n)
 
 
 if __name__ == "__main__":
