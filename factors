@@ -21,18 +21,6 @@ def factorize(num):
 if len(argv) != 2:
     exit()
 
-try:
-    with open(argv[1]) as file:
-        line = file.readline()
-
-        while line != "":
-            num = int(line.split('\n')[0])
-            factorize(num)
-            line = file.readline()
-except:
-    pass
-
-
 def factors(filename):
     """read_file and prints them out"""
 
