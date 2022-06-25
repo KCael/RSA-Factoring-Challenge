@@ -5,18 +5,33 @@ import math
 from sys import argv
 
 def factorize(num):
-    """"gets the factors of an integer > 1"""
-    i = 2
+    """gets the factors of an integer > 1"""
 
-    if num < 2:
-        return
-    print()
-    print(num, "<- num-before")
-    while num % i:
-        i += 1
-        print("{:.0f}={:.0f}*{:.0f}".format(num, num / i, i))
-        print(num, "<- num-after")
-        print()
+    if num % 2 == 0:
+        i = 2
+        print("{}={}*{}".format(num, int(num//i), i))
+    else:
+        sq = int(math.sqrt(num)) + 1
+        for i in range(3, sq, +2):
+            if num % i == 0:
+                print("{}={}*{}".format(num, int(num//i), i))
+                return
+            if num % (sq + i) == 0:
+                print("{}={}*{}".format(num, sq + i, int(num//(sq + i))))
+                return
+            if num % (sq - i) == 0:
+                print("{}={}*{}".format(num, sq - 1, int(num//(sq - i))))
+                return
 
-if len(argv) != 2:
-    exit()
+
+def factors(filename):
+    """read_file and prints them out"""
+
+    with open(filename, encoding="utf-8") as my_file:
+        for i in my_file.readlines():
+            n = int(i)
+            result = factorize(n)
+
+
+if __name__ == "__main__":
+    factors(argv[1])
